@@ -34,6 +34,12 @@ deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe
 EOP
 ) >> /etc/apt/sources.list
 apt-get update
+#install zfs support
+apt-get install software-properties-common
+add-apt-repository ppa:zfs-native/stable
+apt-get update
+apt-get install ubuntu-zfs
+apt-get install zfs-initramfs
 /usr/sbin/usermod -g sudo ubuntu
 #add ubuntu to sudo
 echo "ubuntu ALL=(ALL) NOPASSWD:  ALL" >> /etc/sudoers
